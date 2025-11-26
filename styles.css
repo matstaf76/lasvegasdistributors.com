@@ -1,38 +1,136 @@
-:root{
---bg:#292c31;
---card:#ffffff;
---accent:#0860f7;
---accent-2:#f5a623;
---muted:#eaedf2;
---radius:12px;
---container:1200px;
-font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+/* styles.css - PREMIUM CORPORATE LAS VEGAS VERSION */
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-*{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;background:var(--bg);color:var(--accent);line-height:1.5}
-.container{max-width:var(--container);margin:0 auto;padding:2rem}
 
+/* VARIABLES */
+:root {
+  --bg: #292c31;
+  --card: #ffffff;
+  --accent: #0860f7;
+  --accent-2: #f5a623;
+  --muted: #eaedf2;
+  --radius: 12px;
+  --container: 1200px;
+  --glow-color: rgba(8, 96, 247, 0.25);
 
-/* Header */
-.site-header{background:linear-gradient(90deg,#ffffff 0%, #f1f6ff 100%);border-bottom:1px solid #2862c5}
-.header-inner{display:flex;align-items:center;gap:1rem;justify-content:space-between}
-.logo{display:flex;gap:.6rem;align-items:center;text-decoration:none;color:var(--accent)}
-.logo .brand{font-weight:600;line-height:1}
-.logo strong{color:var(--accent-2)}
-.main-nav ul{list-style:none;display:flex;gap:1rem;align-items:center;margin:0;padding:0}
-.main-nav a{text-decoration:none;color:var(--accent);padding:.45rem .7rem;border-radius:6px}
-.main-nav a:hover{background:rgba(11,36,80,0.06)}
-.nav-toggle{display:none;background:none;border:0;font-size:1.3rem}
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+}
 
+/* BODY */
+body {
+  font-family: var(--font-family, Arial, Helvetica, sans-serif);
+  background: var(--bg);
+  color: var(--card);
+  line-height: 1.6;
+}
 
-/* Hero */
-.hero{padding:3rem 0;background:linear-gradient(180deg,rgba(11,36,80,0.03),transparent)}
-.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:center}
-.hero-copy h1{font-size:2rem;margin-bottom:.6rem}
-.hero-copy p{color:var(--muted);margin-bottom:1rem}
-.hero-ctas{display:flex;gap:.75rem;margin-bottom:1rem}
-.btn{display:inline-block;padding:.65rem 1rem;border-radius:8px;text-decoration:none;border:1px solid transparent;font-weight:600}
-.btn-primary{background:var(--accent);color:white}
-.btn-outline{background:transparent;border-color:var(--accent);color:var(--accent)}
-.trusted-list{display:flex;gap:1rem;lis
+/* HEADER WITH HERO IMAGE */
+.site-header {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+.hero-image img {
+  width: 80%;
+  max-width: 900px;
+  margin: 2rem auto;
+  display: block;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: 0 0 40px var(--glow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 60px var(--glow-color);
+}
+
+/* HERO SECTION */
+.hero {
+  text-align: center;
+  padding: 5rem 1rem 4rem 1rem;
+  color: var(--accent);
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0.5rem auto;
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+.notice {
+  margin-top: 1rem;
+  font-style: italic;
+  color: var(--accent-2);
+  font-weight: 500;
+}
+
+/* ABOUT AND CONTACT */
+.about .container,
+.contact .container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  text-align: center;
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+}
+
+.about h2,
+.contact h2 {
+  color: var(--accent);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.about p,
+.contact p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+/* FOOTER */
+.footer {
+  padding: 3rem 1rem;
+  text-align: center;
+  opacity: 0.7;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.5);
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  .hero h2 { font-size: 3rem; }
+  .hero p { font-size: 1.25rem; }
+  .about h2, .contact h2 { font-size: 2.2rem; }
+}
